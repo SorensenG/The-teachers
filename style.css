@@ -1,466 +1,555 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
- html {
-  scroll-behavior: smooth;
-}
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
- body {
-     font-family: 'Arial', sans-serif;
-     background: #000;
-     color: #fff;
-     overflow-x: hidden;
- }
+        html {
+            scroll-behavior: smooth;
+        }
 
- .hero {
-     height: 100vh;
-     background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
-     position: relative;
-     display: flex;
-     padding-top: 5rem;
-     /* Espaço extra para prevenir sobreposição */
-     align-items: center;
-     justify-content: center;
-     text-align: center;
- }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
- .hero::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background: url('https://i.ibb.co/MyYsfV80/Chat-GPT-Image-6-de-ago-de-2025-16-37-36.png');
-      filter: blur(8px);
-     opacity: 0.3;
- }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+            position: relative;
+            display: flex;
+            padding: 2rem 1rem;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
- .hero-content {
-     position: relative;
-     max-width: 1200px;
-     padding: 2rem;
- }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://i.ibb.co/MyYsfV80/Chat-GPT-Image-6-de-ago-de-2025-16-37-36.png');
+            filter: blur(8px);
+            opacity: 0.3;
+        }
 
- .logo {
-     margin-bottom: 2rem;
-     animation: glow 2s ease-in-out infinite alternate;
- }
+        .hero-content {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+        }
 
- .logo img {
-     max-width: 100%;
-     max-height: 500px;
-     height: auto;
- }
-.glow-img {
-    max-width: 100%;
-    max-height: 500px;
-    height: auto;
-    filter: drop-shadow(0 0 0.3px #ffffff)
-            drop-shadow(0 0 8px #FFA500)
-            drop-shadow(0 0 9px #FFD700);
-    animation: glowPulse 2s infinite alternate;
-}
- .tagline {
-     font-size: clamp(1rem, 2.5vw, 1.5rem);
-     margin: 2rem 0;
-     color: #ccc;
-     font-style: italic;
- }
+        .logo {
+            margin-bottom: 2rem;
+        }
 
- .cta-buttons {
-     margin: 3rem 0;
-     display: flex;
-     gap: 1.5rem;
-     justify-content: center;
-     flex-wrap: wrap;
- }
+        .logo img {
+            max-width: 100%;
+            max-height: 400px;
+            height: auto;
+            filter: drop-shadow(0 0 5px #ffffff)
+                    drop-shadow(0 0 15px #FFA500)
+                    drop-shadow(0 0 25px #FFD700);
+            animation: glowPulse 2s infinite alternate;
+        }
 
- .btn {
-     padding: 1rem 2rem;
-     border: none;
-     border-radius: 50px;
-     font-size: 1.1rem;
-     font-weight: bold;
-     text-transform: uppercase;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     text-decoration: none;
-     display: inline-block;
- }
+        @keyframes glowPulse {
+            from {
+                filter: drop-shadow(0 0 5px #ffffff)
+                        drop-shadow(0 0 15px #FFA500)
+                        drop-shadow(0 0 25px #FFD700);
+            }
+            to {
+                filter: drop-shadow(0 0 8px #ffffff)
+                        drop-shadow(0 0 25px #FFA500)
+                        drop-shadow(0 0 35px #FFD700);
+            }
+        }
 
- .btn-primary {
-     background: linear-gradient(45deg, #FFD700, #FFA500);
-     color: #000;
- }
+        .tagline {
+            font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+            margin: 2rem 0;
+            color: #ccc;
+            font-style: italic;
+            line-height: 1.5;
+        }
 
- .btn-primary:hover {
-     transform: translateY(-3px);
-     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
- }
+        .cta-buttons {
+            margin: 3rem 0;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
- .btn-secondary {
-     background: transparent;
-     color: #FFD700;
-     border: 2px solid #FFD700;
- }
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 150px;
+            text-align: center;
+        }
 
- .btn-secondary:hover {
-     background: #FFD700;
-     color: #000;
-     transform: translateY(-3px);
- }
+        .btn-primary {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+        }
 
- .band-section {
-    z-index: 1 ;
-     padding: 5rem 2rem;
-     position: relative;
-     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
- }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
 
- .container {
-     max-width: 1200px;
-     margin: 0 auto;
- }
+        .btn-secondary {
+            background: transparent;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+        }
 
- .section-title {
-     text-align: center;
-     font-size: clamp(2rem, 5vw, 3rem);
-     margin-bottom: 3rem;
-     color: #FFD700;
-     text-transform: uppercase;
-     font-weight: 900;
- }
+        .btn-secondary:hover {
+            background: #FFD700;
+            color: #000;
+            transform: translateY(-3px);
+        }
 
- .band-photo {
-     max-width: 800px;
-     height: 400px;
-     background: #131313;
-     border-radius: 20px;
-     margin: 0 auto 3rem;
-     position: relative;
-     overflow: hidden;
-     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
- }
-.band-photo img{
-     max-width: 800px;
-}
- .band-photo::after {
-     content: 'The Teachers';
-     position: absolute;
-     bottom: 20px;
-     left: 50%;
-     transform: translateX(-50%);
-     background: rgba(255, 215, 0, 0.9);
-     color: #000;
-     padding: 10px 20px;
-     border-radius: 25px;
-     font-weight: bold;
-     font-size: 1.2rem;
- }
+        .band-section {
+            z-index: 1;
+            padding: 3rem 1rem;
+            position: relative;
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+        }
 
- .members-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     gap: 2rem;
-     margin-top: 3rem;
- }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
- .member {
-     text-align: center;
-     padding: 1.5rem;
-     background: rgba(255, 215, 0, 0.1);
-     border-radius: 15px;
-     border: 2px solid rgba(255, 215, 0, 0.3);
-     transition: all 0.3s ease;
- }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            color: #FFD700;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
 
- .member:hover {
-     transform: translateY(-5px);
-     border-color: #FFD700;
-     background: rgba(255, 215, 0, 0.2);
- }
+        .band-photo {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            min-height: 250px;
+            background: #131313;
+            border-radius: 20px;
+            margin: 0 auto 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
 
- .member h3 {
-     color: #FFD700;
-     font-size: 1.5rem;
-     margin-bottom: 0.5rem;
-     text-transform: uppercase;
- }
+        .band-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
 
- .member .instrument {
-     color: #fff;
-     font-weight: bold;
-     margin-bottom: 0.5rem;
- }
+        .band-photo::after {
+            content: 'The Teachers';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 215, 0, 0.9);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+        }
 
- .member .subject {
-     color: #fcfcfc;
-     font-style: italic;
-     font-size: 0.9rem;
- }
- .member .biography {
-     color: #ccc;
-     font-style: italic;
-     font-size: 0.9rem;
- }
+        .band-description {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
- .music-section {
-     padding: 5rem 2rem;
-     background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-     position: relative;
-     z-index: 1;
- }
+        .band-description h3 {
+            color: #FFD700;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
 
- .repertoire-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-     gap: 2rem;
-     margin-top: 3rem;
- }
+        .band-description p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
 
- .repertoire-section {
-     background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-     padding: 2rem;
-     border-radius: 15px;
-     border: 2px solid rgba(255, 215, 0, 0.2);
-     transition: all 0.3s ease;
- }
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
- .repertoire-section:hover {
-     border-color: #FFD700;
-     transform: translateY(-5px);
- }
+        .member {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
 
- .repertoire-title {
-     color: #FFD700;
-     font-size: 1.5rem;
-     font-weight: bold;
-     text-transform: uppercase;
-     text-align: center;
-     margin-bottom: 1.5rem;
-     padding-bottom: 0.5rem;
-     border-bottom: 2px solid #FFD700;
- }
+        .member:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.2);
+        }
 
- .song-list {
-     display: grid;
-     grid-template-columns: 1fr;
-     gap: 0.5rem;
- }
+        .member h3 {
+            color: #FFD700;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
 
- .song-item {
-     background: rgba(255, 215, 0, 0.1);
-     padding: 0.8rem;
-     border-radius: 8px;
-     color: #fff;
-     font-size: 0.95rem;
-     transition: all 0.3s ease;
-     text-decoration: no;
-     cursor: pointer;
-     border-left: 3px solid transparent;
- }
+        .member .instrument {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
 
- .song-item:hover {
-     background: rgba(255, 215, 0, 0.2);
-     border-left-color: #FFD700;
-     transform: translateX(5px);
- }
+        .member .subject {
+            color: #fcfcfc;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+        }
 
- .playlist {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-     gap: 2rem;
-     margin-top: 3rem;
- }
+        .member .biography {
+            color: #ccc;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+            line-height: 1.4;
+        }
 
- .song-card {
-     background: linear-gradient(135deg, #333, #1a1a1a);
-     padding: 2rem;
-     border-radius: 15px;
-     text-align: center;
-     border: 1px solid #444;
-     transition: all 0.3s ease;
- }
+        .music-section {
+            padding: 3rem 1rem;
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            position: relative;
+            z-index: 1;
+        }
 
- .song-card:hover {
-     transform: translateY(-5px);
-     border-color: #FFD700;
-     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
- }
+        .music-section > p {
+            text-align: center;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #ccc;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
 
- .play-btn {
-     width: 60px;
-     height: 60px;
-     border-radius: 50%;
-     background: linear-gradient(45deg, #FFD700, #FFA500);
-     border: none;
-     margin-bottom: 1rem;
-     cursor: pointer;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin: 0 auto 1rem;
-     transition: transform 0.3s ease;
- }
+        .repertoire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
- .play-btn:hover {
-     transform: scale(1.1);
- }
+        .repertoire-section {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
 
- .play-btn::after {
-     content: '▶';
-     color: #000;
-     font-size: 1.5rem;
-     margin-left: 3px;
- }
+        .repertoire-section:hover {
+            border-color: #FFD700;
+            transform: translateY(-5px);
+        }
 
- .contact-section {
-     padding: 5rem 2rem;
-     position: relative;
-     z-index: 0;
-     background: linear-gradient(135deg, #1a1a1a, #000);
-     text-align: center;
- }
+        .repertoire-title {
+            color: #FFD700;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #FFD700;
+        }
 
- .social-links {
-     display: flex;
-     justify-content: center;
-     gap: 2rem;
-     margin: 2rem 0;
-     flex-wrap: wrap;
- }
+        .song-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
 
- .social-link {
-     width: 60px;
-     height: 60px;
-     border-radius: 50%;
-     background: linear-gradient(45deg, #FFD700, #FFA500);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-decoration: none;
-     color: #000;
-     font-size: 1.5rem;
-     font-weight: bold;
-     transition: all 0.3s ease;
- }
+        .song-item {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            color: #fff;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
 
- .social-link:hover {
-     transform: scale(1.2) rotate(5deg);
- }
+        .song-item:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-left-color: #FFD700;
+            transform: translateX(5px);
+        }
 
- .floating-elements {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     pointer-events: none;
-     z-index: 1;
- }
+        .contact-section {
+            padding: 3rem 1rem;
+            position: relative;
+            z-index: 0;
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            text-align: center;
+        }
 
- .note {
-     position: absolute;
-     color: #FFD700;
-     font-size: 2rem;
-     opacity: 0.3;
-     animation: float 6s ease-in-out infinite;
- }
+        .contact-section p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #ccc;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
 
- .note:nth-child(1) {
-     top: 10%;
-     left: 15%;
-     animation-delay: 0s;
- }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
 
- .note:nth-child(2) {
-     top: 25%;
-     left: 75%;
-     animation-delay: 2s;
- }
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
 
- .note:nth-child(3) {
-     top: 40%;
-     left: 20%;
-     animation-delay: 4s;
- }
+        .social-link:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
 
- .note:nth-child(4) {
-     top: 60%;
-     left: 60%;
-     animation-delay: 1s;
- }
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
 
- .note:nth-child(5) {
-     top: 75%;
-     left: 10%;
-     animation-delay: 3s;
- }
+        .note {
+            position: absolute;
+            color: #FFD700;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
 
- .note:nth-child(6) {
-     top: 50%;
-     left: 85%;
-     animation-delay: 1.5s;
- }
+        .note:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
 
- .note:nth-child(7) {
-     top: 15%;
-     left: 50%;
-     animation-delay: 2.5s;
- }
+        .note:nth-child(2) {
+            top: 25%;
+            left: 75%;
+            animation-delay: 2s;
+        }
 
- .note:nth-child(8) {
-     top: 80%;
-     left: 40%;
-     animation-delay: 0.5s;
- }
+        .note:nth-child(3) {
+            top: 40%;
+            left: 20%;
+            animation-delay: 4s;
+        }
 
- @keyframes glow {
-     from {
-         text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-     }
+        .note:nth-child(4) {
+            top: 60%;
+            left: 60%;
+            animation-delay: 1s;
+        }
 
-     to {
-         text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-     }
- }
+        .note:nth-child(5) {
+            top: 75%;
+            left: 10%;
+            animation-delay: 3s;
+        }
 
- @keyframes gradientShift {
-     0% {
-         background-position: 0% 50%;
-     }
+        .note:nth-child(6) {
+            top: 50%;
+            left: 85%;
+            animation-delay: 1.5s;
+        }
 
-     50% {
-         background-position: 100% 50%;
-     }
+        .note:nth-child(7) {
+            top: 15%;
+            left: 50%;
+            animation-delay: 2.5s;
+        }
 
-     100% {
-         background-position: 0% 50%;
-     }
- }
+        .note:nth-child(8) {
+            top: 80%;
+            left: 40%;
+            animation-delay: 0.5s;
+        }
 
- @keyframes float {
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            }
+        }
 
-     0%,
-     100% {
-         transform: translateY(0px) rotate(0deg);
-     }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
 
-     50% {
-         transform: translateY(-20px) rotate(10deg);
-     }
- }
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem 0.5rem;
+                height: auto;
+                min-height: 100vh;
+            }
 
- @media (max-width: 768px) {
-     .cta-buttons {
-         flex-direction: column;
-         align-items: center;
-     }
+            .hero-content {
+                padding: 1rem;
+            }
 
-     .social-links {
-         gap: 1rem;
-     }
- }
+            .logo img {
+                max-height: 250px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 1rem;
+            }
+
+            .band-section,
+            .music-section,
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .repertoire-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .band-photo {
+                min-height: 200px;
+                border-radius: 15px;
+            }
+
+            .band-photo img {
+                border-radius: 15px;
+            }
+
+            .floating-elements {
+                display: none; /* Remove elementos flutuantes em dispositivos móveis */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 0.5rem;
+            }
+
+            .hero-content {
+                padding: 0.5rem;
+            }
+
+            .section-title {
+                margin-bottom: 1.5rem;
+            }
+
+            .band-section,
+            .music-section,
+            .contact-section {
+                padding: 2rem 0.5rem;
+            }
+
+            .member,
+            .repertoire-section {
+                padding: 1rem;
+            }
+
+            .band-description {
+                margin-bottom: 2rem;
+            }
+
+            .members-grid {
+                gap: 1rem;
+            }
+
+            .repertoire-grid {
+                gap: 1rem;
+            }
+
+            .band-photo::after {
+                bottom: 10px;
+                padding: 6px 12px;
+            }
+        }
