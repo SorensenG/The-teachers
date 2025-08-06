@@ -21,7 +21,7 @@ const links = {
     'U2': 'https://www.youtube.com/watch?v=ftjEcrrf7r0',
     'Van Halen': 'https://www.youtube.com/watch?v=SwYN7mTi6HM',
     'Alanis Morissette': 'https://www.youtube.com/watch?v=NPcyTyilmYY',
-    'Alien Ant Farm': 'https://www.youtube.com/watch?v=CDl9ZMfj6aE',
+    'Alien Ant Farm': 'https://www.youtube.com/watch?v=LJ2t4jfVTiU&ab_channel=AlienAntFarmVEVO',
     'Arctic Monkeys': 'https://www.youtube.com/watch?v=bpOSxM0rNPM',
     'Audioslave': 'https://www.youtube.com/watch?v=7QU1nvuxaMA',
     'Coldplay': 'https://www.youtube.com/watch?v=RB-RcX5DS5A',
@@ -79,15 +79,19 @@ const links = {
 
 
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
+
 
 // Add scroll effect to hero section
 window.addEventListener('scroll', () => {
